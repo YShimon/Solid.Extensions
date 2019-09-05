@@ -25,5 +25,14 @@ namespace Solid.Extensions.Test
             var test = Enumerable.Range(0, 4);
             Assert.AreEqual(test.IsNullOrEmpty(), false);
         }
+
+        [TestMethod]
+        public void ForEach_正常動作()
+        {
+            var test = Enumerable.Range(1, 10);
+            var sum = 0;
+            test.ForEach(x => { sum += x; });
+            Assert.AreEqual(sum, 55);
+        }
     }
 }
